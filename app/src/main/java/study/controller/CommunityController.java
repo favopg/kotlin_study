@@ -38,10 +38,10 @@ public class CommunityController {
 		
 	}
 		
-	@GetMapping("/login/community")
-	public String init(Authentication authentication, Model model) {
-		model.addAttribute("communityName", "");
-		model.addAttribute("authentication", authentication);		
-		return "login/login_community";
-	}	
+//	@GetMapping("/login/community")
+//	public String init(Authentication authentication, Model model) {
+//		model.addAttribute("communityName", "");
+//		model.addAttribute("authentication", authentication);
+//		return "login/login_community";
+//	}
 }

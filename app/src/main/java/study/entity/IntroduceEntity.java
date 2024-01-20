@@ -27,7 +27,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
-public class IntroduceEntity extends CommonEntity{
+public class IntroduceEntity extends CommonKotlinEntity{
 	
 	@Id
 	@Column(name = "id")
@@ -54,7 +54,7 @@ public class IntroduceEntity extends CommonEntity{
 	private UserEntity userEntity;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "community_id", referencedColumnName = "id", insertable = true, updatable = false)	
+	@JoinColumn(name = "community_id", referencedColumnName = "id", insertable = true, updatable = false)
 	private CommunityEntity communityEntity;
-		
+
 }

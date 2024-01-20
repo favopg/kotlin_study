@@ -24,7 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
-public class UserEntity extends CommonEntity{
+public class UserEntity extends CommonKotlinEntity{
 	
 	@Id
 	@Column(name = "id")

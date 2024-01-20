@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import study.data.UserForm;
+import study.data.UserKotlinForm;
 import study.service.UserService;
 
 @Controller
@@ -33,7 +33,7 @@ public class UserController {
 	 * @return
 	 */
 	@GetMapping("/user/user_transition")
-	public String userScreen(@ModelAttribute UserForm userForm) {		
+	public String userScreen(@ModelAttribute UserKotlinForm userForm) {
 		return "user/user_edit";
 	}
 	
@@ -44,7 +44,7 @@ public class UserController {
 	 * @return リダイレクト先(ログイン画面)
 	 */
 	@PostMapping("/user/edit")
-	public String editUser(@ModelAttribute UserForm userForm, HttpSession session) {
+	public String editUser(@ModelAttribute UserKotlinForm userForm, HttpSession session) {
 		
 		Authentication authentication = (Authentication) session.getAttribute("authentication");
 		
@@ -53,15 +53,15 @@ public class UserController {
 		return "redirect:/login";
 	}
 
-	
 	@GetMapping("/user_transition")
-	public String userTransition(@ModelAttribute UserForm userForm) {		
+	public String userTransition(@ModelAttribute UserKotlinForm userForm, Model model) {
+		model.addAttribute("userForm", userForm);
 		return "user/register_user";
 	}
 	
 	@PostMapping("/user_register")
-	public String userRegister(@ModelAttribute UserForm userForm, HttpSession session) {
-		
+	public String userRegister(@ModelAttribute UserKotlinForm userForm, HttpSession session) {
+
 		System.out.println("ユーザ名" + userForm.getName());
 		System.out.println("パスワード" + userForm.getPassword());
 		
