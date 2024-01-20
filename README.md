@@ -5,10 +5,10 @@ kotlinの勉強をしたい人はmainブランチから取得すれば動く・�
 - main  
 基本変えないかも？
 作品ができたら入れるかもしれない
-- study_debelop
+- study_debelop  
 純粋のkotlin勉強用ブランチ。
 好き勝手にコミットしてもらって大丈夫です。  
-- spring_kotlin
+- spring_kotlin  
 管理者がJava + Spring Bootを使用したWebアプリケーションでkotlin勉強するためのブランチです。
 当ブランチがそのうちmainに上がっているかもしれないです。
 
