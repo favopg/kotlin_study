@@ -4,6 +4,7 @@
 .project
 .settings/
 .gitattributes
+.idea/*
 app/.classpath
 app/bin/
 app/src/main/resources/application.properties
@@ -11,3 +12,5 @@ app/src/main/resources/static/
 app/build
 app/src/main/resources/driver/
 app/src/main/webapp/
+app/src/main/resources/log/*
+src/*
