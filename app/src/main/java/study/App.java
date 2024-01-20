@@ -20,6 +20,9 @@ public class App {
      * @param args 起動時に渡すパラメータ
      */
     public static void main(String[] args) {
+        Sample sample = new Sample();
+        System.out.println("初めてのkotlinモジュール" + sample.sayHello());
+
     	SpringApplication.run(App.class, args);
-    }   
+    }
 }

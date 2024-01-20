@@ -17,6 +17,7 @@ plugins {
     id 'jacoco'
     
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id "org.jetbrains.kotlin.jvm" version "1.9.22"
 }
 
 jacoco {
@@ -30,6 +31,9 @@ repositories {
 
 dependencies {
     // Use the latest Groovy version for Spock testing
+    implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version: '1.9.22'
+    //runtimeOnly group: 'org.jetbrains.kotlin', name: 'kotlin-bom', version: '1.9.22', ext: 'pom'
+
     testImplementation 'org.codehaus.groovy:groovy:3.0.10'
 
     // Use the awesome Spock testing and specification framework even with Java
@@ -59,6 +63,8 @@ dependencies {
 application {
     // Define the main class for the application.
     mainClass = 'study.App'
+    //mainClass = 'study.AppTest'
+
 }
 
 tasks.named('test') {
