@@ -13,6 +13,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'org.springframework.boot' version '2.7.17'
+    // 2系から3系にバージョンアップしないと・・・
     //id 'org.springframework.boot' version '3.1.5'
     id 'jacoco'
     
@@ -32,7 +33,10 @@ repositories {
 dependencies {
     // Use the latest Groovy version for Spock testing
     implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version: '1.9.22'
-    //runtimeOnly group: 'org.jetbrains.kotlin', name: 'kotlin-bom', version: '1.9.22', ext: 'pom'
+    runtimeOnly group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: '1.9.22'
+
+    // spring batchの調査を勧めたい
+    //implementation 'org.springframework.boot:spring-boot-starter-batch'
 
     testImplementation 'org.codehaus.groovy:groovy:3.0.10'
 
@@ -63,8 +67,6 @@ dependencies {
 application {
     // Define the main class for the application.
     mainClass = 'study.App'
-    //mainClass = 'study.AppTest'
-
 }
 
 tasks.named('test') {
