@@ -15,11 +15,16 @@
     	<div class="row justify-content-center">
         	<div class="col-md-6">
             	<div class="card">
+					<th:block th:utext="${cardHeader}"></th:block>
+					<!--
                 	<div class="card-header">
                     	<h4 class="mb-0">自己紹介コミュニティ選択画面</h4>
                 	</div>
+                	-->
                 	<div class="card-body">
                     	<form th:action="@{/community/login}" th:method="post">
+							<th:block th:utext="${cardBody}"></th:block>
+							<!--
                         	<div class="form-group mb-1">
                         	    <label for="communityName">コミュニテイ</label>
             					<input type="text" class="form-control" th:name="communityName" id="communityName" placeholder="所属しているコミュニティ名を入力してください">
@@ -30,14 +35,14 @@
                         	</div>
                         	<div class="text-danger">
                         		<th:block th:text="${communityError}"></th:block>                        		
-                        	</div>                        	
+                        	</div>
                         	<button type="submit" id="loginBtn" class="btn btn-primary">コミュニティログイン</button>
-                    	</form>
+                        	-->
+						</form>
                 	</div>
             	</div>
         	</div>
     	</div>
 	</div>
-
 </body>
 </html>

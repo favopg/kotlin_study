@@ -20,6 +20,7 @@ public class SecurityConfig{
 				.principal("新規ユーザ")
 			.and()
 			.authorizeRequests()
+				.antMatchers("/introduce/all").permitAll()
 				.antMatchers("/find_id").permitAll()
 				.antMatchers("/introduce").permitAll()
 				.antMatchers("/login/community").permitAll()

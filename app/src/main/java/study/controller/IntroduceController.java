@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import study.data.UpdateRequestForm;
 import study.entity.CommunityEntity;
 import study.entity.IntroduceEntity;
+import study.front.CommunityScreen;
 import study.repository.CommunityRepository;
 import study.service.IntroduceService;
 import study.service.UserService;
@@ -142,9 +143,13 @@ public class IntroduceController {
 	public String introduce(@RequestParam("communityName") String communityName, 
 			@RequestParam("secret") String secret,
 			Model model) {
-		
+
+
 		if (communityName == null || communityName.equals("") || secret == null || secret.equals("")) {
 			model.addAttribute("communityError", "コミュニティ情報は必須ですよん");
+			CommunityScreen screen = new CommunityScreen();
+			model.addAttribute("cardHeader", screen.init("コミュニティ選択画面"));
+			model.addAttribute("cardBody", screen.cardBody("コミュニティ情報は必須ですよん"));
 
 			return "login/login_community";
 		}
