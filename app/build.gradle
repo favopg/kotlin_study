@@ -34,6 +34,8 @@ dependencies {
     // Use the latest Groovy version for Spock testing
     implementation group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version: '1.9.22'
     runtimeOnly group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: '1.9.22'
+    // なぜ動いた君・・・・・
+    implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.5")
 
     // spring batchの調査を勧めたい
     //implementation 'org.springframework.boot:spring-boot-starter-batch'
