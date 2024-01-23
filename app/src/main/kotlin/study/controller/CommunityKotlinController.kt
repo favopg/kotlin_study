@@ -20,7 +20,7 @@ class CommunityKotlinController {
         model.addAttribute("cardHeader", communityScreen.init())
         model.addAttribute("cardBody", communityScreen.cardBody())
 
-        System.out.println("初めてのCI登録実施のためのコード作成");
+        System.out.println("初めてのCI登録実施のためのコード作");
 
         return "login/login_community"
     }
