@@ -21,10 +21,11 @@
                     	<h4 class="mb-0">自己紹介コミュニティ選択画面</h4>
                 	</div>
                 	-->
+					<th:block th:utext="${cardBody}"></th:block>
+					<!--
                 	<div class="card-body">
                     	<form th:action="@{/community/login}" th:method="post">
-							<th:block th:utext="${cardBody}"></th:block>
-							<!--
+
                         	<div class="form-group mb-1">
                         	    <label for="communityName">コミュニテイ</label>
             					<input type="text" class="form-control" th:name="communityName" id="communityName" placeholder="所属しているコミュニティ名を入力してください">
@@ -34,13 +35,13 @@
             					<input type="text" class="form-control" th:name="secret" id="secret" placeholder="所属しているコミュニティ名を入力してください">
                         	</div>
                         	<div class="text-danger">
-                        		<th:block th:text="${communityError}"></th:block>                        		
+                        		<th:block th:text="${communityError}"></th:block>
                         	</div>
                         	<button type="submit" id="loginBtn" class="btn btn-primary">コミュニティログイン</button>
-                        	-->
 						</form>
                 	</div>
-            	</div>
+                	-->
+				</div>
         	</div>
     	</div>
 	</div>
