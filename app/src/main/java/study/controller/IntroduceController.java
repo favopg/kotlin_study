@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -142,14 +144,15 @@ public class IntroduceController {
 	@PostMapping("/community/login")
 	public String introduce(@RequestParam("communityName") String communityName, 
 			@RequestParam("secret") String secret,
-			Model model) {
+			Model model,HttpServletRequest request) {
 
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
 
 		if (communityName == null || communityName.equals("") || secret == null || secret.equals("")) {
 			model.addAttribute("communityError", "コミュニティ情報は必須ですよん");
 			CommunityScreen screen = new CommunityScreen();
 			model.addAttribute("cardHeader", screen.init("コミュニティ選択画面"));
-			model.addAttribute("cardBody", screen.cardBody("コミュニティ情報は必須ですよん"));
+			model.addAttribute("cardBody", screen.cardBody("コミュニティ情報は必須ですよん", token));
 
 			return "login/login_community";
 		}
